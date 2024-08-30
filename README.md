@@ -11,7 +11,8 @@
   - [Avantajları ve Dezavantajları](#avantajları-ve-dezavantajları)
   - [Kullanım Alanları](#kullanım-alanları)
   - [Sabit Noktalı Sayılarla Örnekler](#sabit-noktalı-sayılarla-örnekler)
-
+- [Copy Constructor (Kopya Kurucu)](#copy-constructor-kopya-kurucu)
+  - [Copy Constructor Tanımı](#copy-constructor-tanımı)
  
 ---
 
@@ -70,3 +71,28 @@ Bu sayının değeri: **82.75**
 Toplam: `0101 1110` (4.875)
 
 ---
+
+<h2 align="center">Copy Constructor (Kopya Kurucu)</h2> 
+
+C++ dilinde **copy constructor** (kopya kurucu), bir nesnenin başka bir nesne kullanılarak oluşturulmasını sağlayan özel bir kurucudur. Copy constructor, bir nesnenin kopyalanmasını, yani orijinal nesnenin üye değişkenlerinin yeni nesneye aynen aktarılmasını sağlar.
+
+Copy constructor genellikle şu durumlarda kullanılır:
+- Bir nesne başka bir nesne kullanılarak başlatıldığında.
+- Bir nesne fonksiyona değer olarak geçirildiğinde.
+- Bir fonksiyon bir nesne döndürdüğünde.
+
+---
+
+### Copy Constructor Tanımı
+
+Bir sınıfta copy constructor aşağıdaki gibi tanımlanır:
+
+```cpp
+class ClassName {
+public:
+    ClassName(const ClassName &other); // Copy constructor
+};
+```
+
+---
+
