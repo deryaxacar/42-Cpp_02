@@ -13,6 +13,10 @@
   - [Sabit Noktalı Sayılarla Örnekler](#sabit-noktalı-sayılarla-örnekler)
 - [Copy Constructor (Kopya Kurucu)](#copy-constructor-kopya-kurucu)
   - [Copy Constructor Tanımı](#copy-constructor-tanımı)
+  - [Copy Constructor Kullanımı](#copy-constructor-kullanımı)
+  - [Varsayılan Copy Constructor](#varsayılan-copy-constructor)
+  - [Özelleştirilmiş Copy Constructor](#özelleştirilmiş-copy-constructor)
+  - [Sonuç](#sonuç)
  
 ---
 
@@ -94,5 +98,65 @@ public:
 };
 ```
 
+- **ClassName:** Sınıfın adı.
+- **const ClassName &other:** Aynı sınıftan bir başka nesneyi (referans olarak) parametre olarak alan copy constructor.
+
 ---
 
+### Copy Constructor Kullanımı
+
+Aşağıda, copy constructor'un nasıl çalıştığını gösteren bir örnek bulunmaktadır:
+
+```cpp
+#include <iostream>
+
+class MyClass {
+public:
+    int value;
+
+    // Parametreli kurucu
+    MyClass(int v) : value(v) {}
+
+    // Copy constructor
+    MyClass(const MyClass &other) : value(other.value) {
+        std::cout << "Copy constructor called!" << std::endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);           // Parametreli kurucu çağrılır
+    MyClass obj2 = obj1;        // Copy constructor çağrılır
+
+    std::cout << "obj1.value: " << obj1.value << std::endl;
+    std::cout << "obj2.value: " << obj2.value << std::endl;
+
+    return 0;
+}
+
+```
+
+-- **obj1** nesnesi oluşturulduğunda, parametreli kurucu çağrılır ve value değişkenine 10 atanır.
+-- **obj2** nesnesi obj1 kullanılarak oluşturulduğunda, copy constructor çağrılır ve obj1'in value değeri obj2'ye kopyalanır.
+
+---
+
+### Varsayılan Copy Constructor
+
+Eğer bir sınıfta copy constructor tanımlanmazsa, C++ derleyicisi otomatik olarak bir varsayılan copy constructor oluşturur. Bu varsayılan copy constructor, sınıfın tüm üye değişkenlerini basit bir kopyalama işlemiyle yeni nesneye aktarır. Ancak, dinamik bellek yönetimi veya kaynak yönetimi gibi özel durumlar için özelleştirilmiş bir copy constructor tanımlamak gerekebilir.
+
+---
+
+### Özelleştirilmiş Copy Constructor
+
+Özelleştirilmiş bir copy constructor, özellikle aşağıdaki durumlarda gereklidir:
+
+- Dinamik Bellek Yönetimi: Eğer sınıf içerisinde dinamik olarak ayrılmış bellek kullanılıyorsa, shallow copy yerine deep copy yapmak gerekebilir.
+- Kaynak Yönetimi: Dosya tanıtıcıları, ağ bağlantıları veya diğer sistem kaynakları gibi nesnelerin doğru bir şekilde kopyalanması gerektiğinde.
+
+---
+
+### Sonuç
+
+Copy constructor, bir nesnenin kopyalanma şeklini kontrol etmenin kritik bir yoludur. Özellikle performans ve kaynak yönetimi açısından önemli olan bu özellik, C++ dilinde sıkça kullanılan temel bir yapıdır.
+
+---
