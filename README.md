@@ -8,6 +8,9 @@
 ## İçindekiler
 
 - [Sabit Noktalı Sayılar (Fixed Point Numbers)](#sabit-noktalı-sayılar-fixed-point-numbers)
+  - [Avantajları ve Dezavantajları](#avantajları-ve-dezavantajları)
+  - [Kullanım Alanları](#kullanım-alanları)
+  - [Sabit Noktalı Sayılarla Örnekler](#sabit-noktalı-sayılarla-örnekler)
 
  
 ---
@@ -20,7 +23,7 @@ Sabit noktalı aritmetik, performans ve kaynak verimliliğinin kritik olduğu g�
 
 ---
 
-<h2 align="center">Sabit Noktalı Sayıların Avantajları ve Dezavantajları</h2> 
+<h2 align="center">Avantajları ve Dezavantajları</h2> 
 
 
 | **Avantajlar**                                          | **Dezavantajlar**                                       |
