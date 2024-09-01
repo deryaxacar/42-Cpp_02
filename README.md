@@ -244,7 +244,7 @@ Geçici polimorfizm (ad-hoc polymorphism), programlama dillerinde aynı isimdeki
 
 ### Geçici Polimorfizm Türleri
 
-**1** - Fonksiyon Aşırı Yükleme (Function Overloading):
+**1 - Fonksiyon Aşırı Yükleme (Function Overloading):**
   - Aynı isimde birden fazla fonksiyon tanımlayarak gerçekleştirilir.
   - Bu fonksiyonlar farklı sayıda veya türde parametreler alır.
   - Derleyici, fonksiyon çağrısı sırasında parametrelerin türüne ve sayısına bakarak hangi fonksiyonun çağrılacağını belirler.
@@ -277,7 +277,7 @@ int main() {
 
 ---
 
-**2** - Operatör Aşırı Yükleme (Operator Overloading):
+**2 - Operatör Aşırı Yükleme (Operator Overloading):**
   - Standart operatörlerin kullanıcı tanımlı veri türleri için yeniden tanımlanmasıdır.
   - Bu sayede, standart operatörler kullanıcı tanımlı veri türleri ile mantıklı bir şekilde çalışabilir.
 
