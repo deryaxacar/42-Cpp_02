@@ -375,11 +375,11 @@ C++'da **increment (arttırma)** ve **decrement (azaltma)** işlemleri, bir değ
 
 ### Increment (Artırma) ve Decrement (Azaltma) Operatörleri
 
-- Increment (Artırma) Operatörü (++):
+- **Increment (Artırma) Operatörü (++):**
   - x++ (Postfix): Önce mevcut değeri kullanır, sonra artırır.
   - ++x (Prefix): Önce artırır, sonra yeni değeri kullanır.
 
-- Decrement (Azaltma) Operatörü (--):
+- **Decrement (Azaltma) Operatörü (--):**
   - x-- (Postfix): Önce mevcut değeri kullanır, sonra azaltır.
   - --x (Prefix): Önce azaltır, sonra yeni değeri kullanır.
  
