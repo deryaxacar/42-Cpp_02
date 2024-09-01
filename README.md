@@ -29,7 +29,7 @@
   - [Sağladığı Bazı Fonksiyonlar](#sağladığı-bazı-fonksiyonlar)
   - [Kullanım Örneği](#kullanım-örneği)
 - [Increment Decrement Prefix ve Postfix Nedir?](#increment-decrement-prefix-ve-postfix-nedir)
-  - [Increment (Artırma) ve Decrement (Azaltma) Operatörleri](#increment-artırma-ve-decrement-azaltma-operatörleri)
+  - [Increment (Arttırma) ve Decrement (Azaltma) Operatörleri](#increment-arttırma-ve-decrement-azaltma-operatörleri)
  
 ---
 
@@ -371,13 +371,13 @@ int main() {
 
 <h2 align="center">Increment Decrement Prefix ve Postfix Nedir?</h2>
 
-C++'da **increment (arttırma)** ve **decrement (azaltma)** işlemleri, bir değişkenin değerini artırmak veya azaltmak için kullanılır. **Prefix** ve **postfix** işlemleri ise bu artırma veya azaltma işlemlerinin uygulanma zamanını belirler. İşte bu kavramlar:
+C++'da **increment (arttırma)** ve **decrement (azaltma)** işlemleri, bir değişkenin değerini arttırmak veya azaltmak için kullanılır. **Prefix** ve **postfix** işlemleri ise bu arttırma veya azaltma işlemlerinin uygulanma zamanını belirler. İşte bu kavramlar:
 
-### Increment (Artırma) ve Decrement (Azaltma) Operatörleri
+### Increment (Arttırma) ve Decrement (Azaltma) Operatörleri
 
-- **Increment (Artırma) Operatörü (++):**
-  - x++ (Postfix): Önce mevcut değeri kullanır, sonra artırır.
-  - ++x (Prefix): Önce artırır, sonra yeni değeri kullanır.
+- **Increment (Arttırma) Operatörü (++):**
+  - x++ (Postfix): Önce mevcut değeri kullanır, sonra arttırır.
+  - ++x (Prefix): Önce arttırır, sonra yeni değeri kullanır.
 
 - **Decrement (Azaltma) Operatörü (--):**
   - x-- (Postfix): Önce mevcut değeri kullanır, sonra azaltır.
@@ -387,14 +387,14 @@ C++'da **increment (arttırma)** ve **decrement (azaltma)** işlemleri, bir değ
 
 ### Prefix ve Postfix Kullanımı
 
-- **Prefix Artırma/Azaltma:** Değişkenin değeri önce değiştirilir (artırılır veya azaltılır), sonra sonuç kullanılır.
+- **Prefix Arttırma/Azaltma:** Değişkenin değeri önce değiştirilir (artırılır veya azaltılır), sonra sonuç kullanılır.
 
 ```cpp
 int x = 5;
 int y = ++x; // x önce 6'ya artırılır, sonra y'ye atanır. Sonuç: x=6, y=6
 ```
 
-- **Postfix Artırma/Azaltma:** Değişkenin mevcut değeri önce kullanılır, sonra değiştirilir.
+- **Postfix Arttırma/Azaltma:** Değişkenin mevcut değeri önce kullanılır, sonra değiştirilir.
 
 ```cpp
 int x = 5;
