@@ -35,7 +35,7 @@
 
 <h2 align="center">Sabit Noktalı Sayılar (Fixed Point Numbers)</h2> 
 
-**Sabit Noktalı Sayılar (Fixed Point Numbers)**, gerçek sayıların bilgisayar ortamında temsil edilme yöntemlerinden biridir. Bu yöntemde, bir sayının kesirli ve tam sayı kısımları belirli bir noktada sabitlenir. Kayan noktalı sayılarda (floating-point numbers) ondalık nokta "yüzerken", sabit noktalı sayılarda bu nokta belirli bir konumda sabit kalır. Bu yöntem, performans, doğruluk ve aralık arasında bir denge sunar.
+**Sabit Noktalı Sayılar (Fixed Point Numbers)**, gerçek sayıların bilgisayar ortamında temsil edilme yöntemlerinden biridir. Bu yöntemde, bir sayının kesirli ve tam sayı kısımları belirli bir noktada sabitlenir. Kayan noktalı sayılarda (floating-point numbers) ondalık nokta değeriyle birlikte hareket ederken, sabit noktalı sayılarda bu nokta belirli bir konumda sabit kalır. Bu yöntem, performans, doğruluk ve aralık arasında bir denge sunar.
 
 Sabit noktalı aritmetik, performans ve kaynak verimliliğinin kritik olduğu gömülü sistemler, dijital sinyal işleme (DSP) ve gerçek zamanlı uygulamalarda yaygın olarak kullanılır.
 
