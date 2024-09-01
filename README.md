@@ -24,9 +24,11 @@
 - [Geçici Polimorfizm nedir?](#geçici-polimorfizm-nedir)
   - [Geçici Polimorfizm Türleri](#geçici-polimorfizm-türleri)
   - [Geçici Polimorfizmin Özellikleri](#geçici-polimorfizmin-özellikleri)
-- [Cmath kütüphanesi nedir?](#cmath-kütüphanesi-nedir)
+- [Cmath Kütüphanesi Nedir?](#cmath-kütüphanesi-nedir)
   - [Sağladığı Bazı Fonksiyonlar](#sağladığı-bazı-fonksiyonlar)
   - [Kullanım Örneği](#kullanım-örneği)
+- [Increment Decrement Prefix ve Postfix Nedir?](#increment-decrement-prefix-ve-postfix-nedir)
+  - [Increment (Artırma) ve Decrement (Azaltma) Operatörleri](#increment-artırma-ve-decrement-azaltma-operatörleri)
  
 ---
 
@@ -319,7 +321,7 @@ Geçici polimorfizm, C++ gibi dillerde kodun esnekliğini artıran önemli bir �
 
 ---
 
-<h2 align="center"> Cmath kütüphanesi nedir?</h2> 
+<h2 align="center">Cmath Kütüphanesi Nedir?</h2> 
 
 `<cmath>` kütüphanesi, C++ programlama dilinde matematiksel işlemleri gerçekleştirmek için kullanılan bir standart kütüphanedir. Bu kütüphane, temel aritmetik işlemlerden, trigonometrik fonksiyonlara, üs ve logaritma hesaplamalarına kadar geniş bir yelpazede matematiksel fonksiyonlar sunar.
 
@@ -366,3 +368,37 @@ int main() {
 
 ---
 
+<h2 align="center">Increment Decrement Prefix ve Postfix Nedir?</h2>
+
+C++'da **increment (arttırma)** ve **decrement (azaltma)** işlemleri, bir değişkenin değerini artırmak veya azaltmak için kullanılır. **Prefix** ve **postfix** işlemleri ise bu artırma veya azaltma işlemlerinin uygulanma zamanını belirler. İşte bu kavramlar:
+
+### Increment (Artırma) ve Decrement (Azaltma) Operatörleri
+
+- Increment (Artırma) Operatörü (++):
+  - x++ (Postfix): Önce mevcut değeri kullanır, sonra artırır.
+  - ++x (Prefix): Önce artırır, sonra yeni değeri kullanır.
+
+- Decrement (Azaltma) Operatörü (--):
+  - x-- (Postfix): Önce mevcut değeri kullanır, sonra azaltır.
+  - --x (Prefix): Önce azaltır, sonra yeni değeri kullanır.
+ 
+---
+
+### Prefix ve Postfix Kullanımı
+
+- **Prefix Artırma/Azaltma:** Değişkenin değeri önce değiştirilir (artırılır veya azaltılır), sonra sonuç kullanılır.
+
+```cpp
+int x = 5;
+int y = ++x; // x önce 6'ya artırılır, sonra y'ye atanır. Sonuç: x=6, y=6
+```
+
+- **Postfix Artırma/Azaltma:** Değişkenin mevcut değeri önce kullanılır, sonra değiştirilir.
+
+```cpp
+int x = 5;
+int y = x++; // y'ye mevcut değer (5) atanır, sonra x 6'ya artırılır. Sonuç: x=6, y=5
+
+```
+
+---
