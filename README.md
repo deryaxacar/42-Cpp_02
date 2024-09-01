@@ -24,6 +24,9 @@
 - [Geçici Polimorfizm nedir?](#geçici-polimorfizm-nedir)
   - [Geçici Polimorfizm Türleri](#geçici-polimorfizm-türleri)
   - [Geçici Polimorfizmin Özellikleri](#geçici-polimorfizmin-özellikleri)
+- [Cmath kütüphanesi nedir?](#cmath-kütüphanesi-nedir)
+  - [Sağladığı Bazı Fonksiyonlar](#sağladığı-bazı-fonksiyonlar)
+  - [Kullanım Örneği](#kullanım-örneği)
  
 ---
 
@@ -315,3 +318,51 @@ int main() {
 Geçici polimorfizm, C++ gibi dillerde kodun esnekliğini artıran önemli bir özelliktir. Farklı türlerdeki verilere aynı isimdeki fonksiyonlarla işlem yapmayı sağlar ve bu da kodun daha okunabilir ve sürdürülebilir olmasına katkıda bulunur.
 
 ---
+
+<h2 align="center"> Cmath kütüphanesi nedir?</h2> 
+
+`<cmath>` kütüphanesi, C++ programlama dilinde matematiksel işlemleri gerçekleştirmek için kullanılan bir standart kütüphanedir. Bu kütüphane, temel aritmetik işlemlerden, trigonometrik fonksiyonlara, üs ve logaritma hesaplamalarına kadar geniş bir yelpazede matematiksel fonksiyonlar sunar.
+
+---
+
+### Sağladığı Bazı Fonksiyonlar
+
+
+<div align="center">
+
+| **Fonksiyon Türü**       | **Fonksiyonlar**                    | **Açıklama**                                        |
+|--------------------------|-------------------------------------|-----------------------------------------------------|
+| **Trigonometri**          | `sin(x)`, `cos(x)`, `tan(x)`        | Sinüs, kosinüs, tanjant hesaplar.                   |
+|                          | `asin(x)`, `acos(x)`, `atan(x)`     | Ark sinüs, ark kosinüs, ark tanjant hesaplar.       |
+| **Üs ve Karekök**         | `pow(x, y)`                         | `x` üssü `y` değerini hesaplar.                     |
+|                          | `sqrt(x)`, `cbrt(x)`                | Karekök ve küpkök hesaplar.                         |
+| **Logaritma**             | `log(x)`, `log10(x)`                | Doğal ve 10 tabanında logaritma hesaplar.           |
+| **Yuvarlama**             | `ceil(x)`, `floor(x)`, `round(x)`   | Yuvarlama işlemleri yapar.                          |
+| **Mutlak Değer**          | `fabs(x)`                           | Mutlak değer hesaplar.                              |
+| **Üssel ve Hiperbolik**   | `exp(x)`, `sinh(x)`, `cosh(x)`, `tanh(x)` | Üssel ve hiperbolik fonksiyonlar hesaplar.     |
+
+</div>
+
+---
+
+### Kullanım Örneği
+
+```cpp
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double x = 9.0;
+    double y = 2.0;
+
+    std::cout << "sqrt(x) = " << std::sqrt(x) << std::endl; // x'in karekökü
+    std::cout << "pow(x, y) = " << std::pow(x, y) << std::endl; // x üssü y
+    std::cout << "sin(x) = " << std::sin(x) << std::endl; // x'in sinüsü
+    std::cout << "log(x) = " << std::log(x) << std::endl; // x'in doğal logaritması
+
+    return 0;
+}
+```
+
+---
+
