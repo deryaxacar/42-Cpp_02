@@ -21,6 +21,9 @@
   - [Örnek Kod](#örnek-kod)
   - [Operator Overloading Notlar](#operator-overloading-notlar)
   - [Kısaca Özet](#kısaca-özet)
+- [Geçici Polimorfizm nedir?](#geçici-polimorfizm-nedir)
+  - [Geçici Polimorfizm Türleri](#geçici-polimorfizm-türleri)
+  - [Geçici Polimorfizmin Özellikleri](#geçici-polimorfizmin-özellikleri)
  
 ---
 
@@ -229,5 +232,86 @@ int main() {
 ### Kısaca Özet
 
 Operator overloading, C++'da sınıfları ve veri türlerini daha esnek ve kullanıcı dostu hale getirmek için kullanılan güçlü bir özelliktir. Bu özellik, programın daha okunabilir ve anlaşılır olmasına katkı sağlar, çünkü karmaşık işlemler basit operatörlerle ifade edilebilir.
+
+---
+
+<h2 align="center">Geçici Polimorfizm nedir?</h2> 
+
+
+Geçici polimorfizm (ad-hoc polymorphism), programlama dillerinde aynı isimdeki fonksiyonların veya operatörlerin, farklı veri tipleriyle veya farklı sayıda parametrelerle çalışabilmesini sağlayan bir polimorfizm türüdür. Bu tür polimorfizm, genellikle iki temel teknikle gerçekleştirilir: fonksiyon aşırı yükleme **(function overloading)** ve operatör aşırı yükleme **(operator overloading)**.
+
+---
+
+### Geçici Polimorfizm Türleri
+
+**1** - Fonksiyon Aşırı Yükleme (Function Overloading):
+  - Aynı isimde birden fazla fonksiyon tanımlayarak gerçekleştirilir.
+  - Bu fonksiyonlar farklı sayıda veya türde parametreler alır.
+  - Derleyici, fonksiyon çağrısı sırasında parametrelerin türüne ve sayısına bakarak hangi fonksiyonun çağrılacağını belirler.
+
+**örnek:**
+```cpp
+void print(int i) {
+    std::cout << "Tam sayı: " << i << std::endl;
+}
+
+void print(double d) {
+    std::cout << "Kayan noktalı sayı: " << d << std::endl;
+}
+
+void print(std::string s) {
+    std::cout << "Metin: " << s << std::endl;
+}
+
+int main() {
+    print(10);          // "Tam sayı: 10"
+    print(3.14);        // "Kayan noktalı sayı: 3.14"
+    print("Merhaba");   // "Metin: Merhaba"
+    return 0;
+}
+```
+
+---
+
+**Açıklama:** Aynı isimdeki print fonksiyonunu üç farklı veri türü için aşırı yükleyerek (`int`, `double`, ve `string`), her bir tür için farklı bir mesajla birlikte ekrana yazdırma işlemi gerçekleştirir. main fonksiyonunda sırasıyla bir tam sayı, bir kayan noktalı sayı ve bir metin (string) için print fonksiyonu çağrılır ve uygun mesajlar ekrana yazdırılır.
+
+---
+
+**2** - Operatör Aşırı Yükleme (Operator Overloading):
+  - Standart operatörlerin kullanıcı tanımlı veri türleri için yeniden tanımlanmasıdır.
+  - Bu sayede, standart operatörler kullanıcı tanımlı veri türleri ile mantıklı bir şekilde çalışabilir.
+
+**örnek:**
+```cpp
+class ComplexNumber {
+public:
+    int real, imag;
+    ComplexNumber(int r = 0, int i = 0) : real(r), imag(i) {}
+    ComplexNumber operator + (const ComplexNumber& obj) {
+        return ComplexNumber(real + obj.real, imag + obj.imag);
+    }
+};
+
+int main() {
+    ComplexNumber c1(3, 4), c2(1, 2);
+    ComplexNumber c3 = c1 + c2;
+    // c3.real = 4, c3.imag = 6
+    return 0;
+}
+
+```
+
+---
+
+**Açıklama:** `ComplexNumber` adında bir sınıf tanımlar ve bu sınıfın nesneleri üzerinde toplama `(+)` operatörünü aşırı yükler. main fonksiyonunda iki ComplexNumber nesnesi `(c1 ve c2)` tanımlanır ve bunlar toplandıktan sonra sonuç `c3` nesnesine atanır. Sonuç olarak, `c3` nesnesi `c1` ve `c2`'nin gerçek ve sanal kısımlarının toplamını içerir.
+
+---
+
+### Geçici Polimorfizmin Özellikleri
+- **Derleme Zamanında Belirlenir:** Hangi fonksiyonun veya operatörün kullanılacağı, derleme zamanında belirlenir. Bu nedenle, geçici polimorfizm statik polimorfizm olarak da bilinir.
+- **Esneklik:** Aynı işlevselliği farklı türlerle kullanma esnekliği sağlar.
+- **Performans:** Dinamik polimorfizmden farklı olarak, çalışma zamanı maliyeti yoktur, çünkü her şey derleme zamanında çözülür.
+
+Geçici polimorfizm, C++ gibi dillerde kodun esnekliğini artıran önemli bir özelliktir. Farklı türlerdeki verilere aynı isimdeki fonksiyonlarla işlem yapmayı sağlar ve bu da kodun daha okunabilir ve sürdürülebilir olmasına katkıda bulunur.
 
 ---
