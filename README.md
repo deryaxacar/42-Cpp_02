@@ -17,6 +17,10 @@
   - [Varsayılan Copy Constructor](#varsayılan-copy-constructor)
   - [Özelleştirilmiş Copy Constructor](#özelleştirilmiş-copy-constructor)
   - [Sonuç](#sonuç)
+- [Operator Overload Nedir?](#operator-overload-nedir)
+  - [Örnek Kod](#örnek-kod)
+  - [Operator Overloading Notlar](#operator-overloading-notlar)
+  - [Kısaca Özet](#kısaca-özet)
  
 ---
 
@@ -78,7 +82,7 @@ Toplam: `0101 1110` (4.875)
 
 <h2 align="center">Copy Constructor (Kopya Kurucu)</h2> 
 
-C++ dilinde **copy constructor** (kopya kurucu), bir nesnenin başka bir nesne kullanılarak oluşturulmasını sağlayan özel bir kurucudur. Copy constructor, bir nesnenin kopyalanmasını, yani orijinal nesnenin üye değişkenlerinin yeni nesneye aynen aktarılmasını sağlar.
+C++ dilinde `copy constructor` (kopya kurucu), bir nesnenin başka bir nesne kullanılarak oluşturulmasını sağlayan özel bir kurucudur. Copy constructor, bir nesnenin kopyalanmasını, yani orijinal nesnenin üye değişkenlerinin yeni nesneye aynen aktarılmasını sağlar.
 
 Copy constructor genellikle şu durumlarda kullanılır:
 - Bir nesne başka bir nesne kullanılarak başlatıldığında.
@@ -135,8 +139,8 @@ int main() {
 
 ```
 
--- **obj1** nesnesi oluşturulduğunda, parametreli kurucu çağrılır ve value değişkenine 10 atanır.
--- **obj2** nesnesi obj1 kullanılarak oluşturulduğunda, copy constructor çağrılır ve obj1'in value değeri obj2'ye kopyalanır.
+- `obj1` nesnesi oluşturulduğunda, parametreli kurucu çağrılır ve value değişkenine 10 atanır.
+- `obj2` nesnesi `obj1` kullanılarak oluşturulduğunda, copy constructor çağrılır ve `obj1`'in value değeri `obj2`'ye kopyalanır.
 
 ---
 
@@ -150,13 +154,80 @@ Eğer bir sınıfta copy constructor tanımlanmazsa, C++ derleyicisi otomatik ol
 
 Özelleştirilmiş bir copy constructor, özellikle aşağıdaki durumlarda gereklidir:
 
-- Dinamik Bellek Yönetimi: Eğer sınıf içerisinde dinamik olarak ayrılmış bellek kullanılıyorsa, shallow copy yerine deep copy yapmak gerekebilir.
-- Kaynak Yönetimi: Dosya tanıtıcıları, ağ bağlantıları veya diğer sistem kaynakları gibi nesnelerin doğru bir şekilde kopyalanması gerektiğinde.
+- `Dinamik Bellek Yönetimi`: Eğer sınıf içerisinde dinamik olarak ayrılmış bellek kullanılıyorsa, shallow copy yerine deep copy yapmak gerekebilir.
+- `Kaynak Yönetimi`: Dosya tanıtıcıları, ağ bağlantıları veya diğer sistem kaynakları gibi nesnelerin doğru bir şekilde kopyalanması gerektiğinde.
 
 ---
 
 ### Sonuç
 
 Copy constructor, bir nesnenin kopyalanma şeklini kontrol etmenin kritik bir yoludur. Özellikle performans ve kaynak yönetimi açısından önemli olan bu özellik, C++ dilinde sıkça kullanılan temel bir yapıdır.
+
+---
+
+<h2 align="center">Operator Overload Nedir?</h2> 
+
+`Operator overloading` (Operatör aşırı yükleme), C++ gibi nesne yönelimli programlama dillerinde mevcut olan bir özelliktir. Bu özellik, kullanıcı tanımlı sınıflar ve veri türleri için mevcut C++ operatörlerinin anlamını yeniden tanımlamaya veya genişletmeye olanak tanır. Bu sayede, standart operatörlerin (örneğin, `+`, `-`, `*`, `==`) farklı veri türleriyle çalışabilmesi sağlanır.
+
+---
+
+### Örnek kod
+
+```cpp
+
+#include <iostream> // Giriş/çıkış işlemleri için gerekli kütüphane
+
+// Karmaşık sayıları temsil eden bir sınıf tanımlıyoruz
+class ComplexNumber {
+public:
+    int real, imag; // Karmaşık sayının gerçek ve sanal kısımlarını temsil eden üye değişkenler
+
+    // Yapıcı fonksiyon: Karmaşık sayının gerçek ve sanal kısımlarını alır, varsayılan olarak 0 kabul edilir
+    ComplexNumber(int r = 0, int i = 0) : real(r), imag(i) {}
+
+    // + operatörünün aşırı yüklenmesi: İki karmaşık sayıyı toplamak için kullanılır
+    ComplexNumber operator + (const ComplexNumber& obj) {
+        ComplexNumber temp; // Sonucu saklamak için geçici bir ComplexNumber nesnesi oluşturulur
+        temp.real = real + obj.real; // Gerçek kısımlar toplanır
+        temp.imag = imag + obj.imag; // Sanal kısımlar toplanır
+        return temp; // Sonuç döndürülür
+    }
+};
+
+int main() {
+    // İki karmaşık sayı tanımlıyoruz: c1 (3 + 4i), c2 (1 + 2i)
+    ComplexNumber c1(3, 4), c2(1, 2);
+    
+    // c1 ve c2'nin toplamını c3'e atıyoruz
+    ComplexNumber c3 = c1 + c2;
+
+    // Sonucu ekrana yazdırıyoruz: "c3 = 4 + 6i"
+    std::cout << "c3 = " << c3.real << " + " << c3.imag << "i" << std::endl;
+
+    return 0; // Programın sonlanması
+}
+
+
+```
+
+---
+
+**Açıklama:**`
+- `ComplexNumber Sınıfı`: Bu sınıf, karmaşık sayıları temsil eder. `real` ve `imag` adında iki üye değişkene sahiptir.
+- `operator + Fonksiyonu`: `+ operatörü`, `ComplexNumber` sınıfı için yeniden tanımlanmıştır. Bu, iki karmaşık sayıyı toplamak için kullanılır.
+- `Kullanım`: `c1 + c2` ifadesi, `operator +` fonksiyonunu çağırır ve iki karmaşık sayıyı toplar.
+
+---
+
+### Operator Overloading Notlar
+- Sadece Mevcut Operatörler: C++'da yeni operatörler tanımlanamaz; ancak mevcut operatörler aşırı yüklenebilir.
+- Anlamlı Kullanım: Operatör aşırı yüklemesi, yalnızca mantıklı olduğu durumlarda kullanılmalıdır. Örneğin, `+` operatörü toplama işlemi için uygunken, anlamsız veya karmaşık kullanım durumlarından kaçınılmalıdır.
+- Varsayılan Davranış: Bazı operatörler (örneğin, `=`) varsayılan olarak aşırı yüklenmiştir, ancak bu davranış özelleştirilebilir.
+
+---
+
+### Kısaca Özet
+
+Operator overloading, C++'da sınıfları ve veri türlerini daha esnek ve kullanıcı dostu hale getirmek için kullanılan güçlü bir özelliktir. Bu özellik, programın daha okunabilir ve anlaşılır olmasına katkı sağlar, çünkü karmaşık işlemler basit operatörlerle ifade edilebilir.
 
 ---
