@@ -1,7 +1,8 @@
 <div align="center">
   <h1>C++ Module 02</h1> <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++ Logo" width="65"></br></br>
 </div>
-<p align="center">Bu proje, C++ dilinde temel programlama becerilerini geliştirmek için hazırlanmıştır.</p>
+
+<p align="center">Bu proje, C++ dilinde temel programlama becerilerini geliştirmek için tasarlanmıştır. Proje, sabit noktalı sayılar (fixed-point numbers), copy constructor, operatör aşırı yükleme (operator overloading), geçici polimorfizm (temporary polymorphism), cmath kütüphanesi ve increment/decrement operatörleri gibi önemli C++ konularını kapsamlı bir şekilde ele alır.</p>
 
 ---
 
