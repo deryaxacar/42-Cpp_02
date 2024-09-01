@@ -403,3 +403,5 @@ int y = x++; // y'ye mevcut değer (5) atanır, sonra x 6'ya artırılır. Sonu�
 ```
 
 ---
+
+Bu README dosyası Derya ACAR tarafından hazırlanmıştır.
