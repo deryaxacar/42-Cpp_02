@@ -6,7 +6,7 @@
 
 ---
 
-## İçindekiler
+## İçindekiler 🔗
 
 - [Sabit Noktalı Sayılar (Fixed Point Numbers)](#sabit-noktalı-sayılar-fixed-point-numbers)
   - [Avantajları ve Dezavantajları](#avantajları-ve-dezavantajları)
