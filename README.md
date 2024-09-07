@@ -91,9 +91,15 @@ Toplam: `0101 1110` (4.875)
 
 <h2 align="center">Copy Constructor (Kopya Kurucu)</h2> 
 
-C++ dilinde `copy constructor` (kopya kurucu), bir nesnenin başka bir nesne kullanılarak oluşturulmasını sağlayan özel bir kurucudur. Copy constructor, bir nesnenin kopyalanmasını, yani orijinal nesnenin üye değişkenlerinin yeni nesneye aynen aktarılmasını sağlar.
+C++ dilinde `copy constructor` (kopya kurucu), bir nesnenin başka bir nesne kullanılarak oluşturulmasını sağlayan özel bir kurucudur. Copy constructor, bir nesnenin kopyalanmasını, yani Orijinal nesnenin üye değişkenlerini yeni bir nesneye kopyalar ve iki farklı nesne oluşturur, ancak bu iki nesnenin üye değişkenlerinin aynı değerlere sahip olduğu anlamına gelir. Yani:
 
+- İki nesne de birbirinden bağımsızdır.
+- Her nesne, kendi belleğinde yer tutar.
+- Eğer orijinal nesnede bir değişiklik yaparsanız, bu yeni nesneye etki etmez. Aynı şekilde, yeni nesnede bir değişiklik yaparsanız, orijinal nesne bundan etkilenmez.
+
+Örneğin, bir sınıfta bir `int` değişkeni varsa ve bir nesnenin kopyasını oluşturduğunuzda, her iki nesne de o değişkenin aynı değere sahip bağımsız kopyalarını içerir. Ancak, eğer o değişkenin değeri bir nesnede değişirse, diğer nesnenin değişkeni bundan etkilenmez. Kısacası, copy constructor ile `fiziksel olarak ayrı` iki nesne oluşur, ancak bu iki nesnenin üye değişkenlerinin başlangıçta aynı değerleri vardır.
 Copy constructor genellikle şu durumlarda kullanılır:
+
 - Bir nesne başka bir nesne kullanılarak başlatıldığında.
 - Bir nesne fonksiyona değer olarak geçirildiğinde.
 - Bir fonksiyon bir nesne döndürdüğünde.
