@@ -6,7 +6,7 @@
 /*   By: deryacar <deryacar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 16:55:02 by deryacar          #+#    #+#             */
-/*   Updated: 2024/09/17 16:55:04 by deryacar         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:57:21 by deryacar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 
 int Fixed::toInt(void) const
 {
+    
     int i_back = holder >> _fixed;
     return (i_back);
 }
 
 float Fixed::toFloat(void) const
 {
-    if((float)holder == 0){
-        std::cout << "cannot be divided by 0" << std::endl;
+    if((float)_fixed == 0){
         return 0;
     }
     float f_back = (float)holder / (float)(1 << _fixed);
