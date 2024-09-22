@@ -99,8 +99,8 @@ class Fixed
         
         Fixed &operator=(const Fixed &);  // Kopya atama operatörü: Mevcut bir nesneyi başka bir nesneyle değiştirir.
         
-        int getRawBits(void) const;  // Nesnenin ham sabit nokta değerini döndürür.
-        void setRawBits(int const raw);  // Nesnenin sabit nokta değerini ayarlar.
+        int getRawBits(void) const;  // Nesnenin ham sabit nokta değerini döndürür. (getter)
+        void setRawBits(int const raw);  // Nesnenin sabit nokta değerini ayarlar. (setter)
 };
 
 ```
