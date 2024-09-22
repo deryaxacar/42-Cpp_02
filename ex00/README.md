@@ -75,3 +75,26 @@ Eğer bir sınıf, kaynak yönetimi (dinamik bellek, dosyalar, vb.) gibi manuel 
 
 **Örnek:**
 Aşağıda Ortodoks Kanonik Form'u uygulayan bir sınıf örneği yer alıyor:
+
+```cpp
+class Fixed
+{
+    private:
+        int fixed;  // Sabit nokta değeri, dahili olarak tam sayı formatında saklanır.
+        static const int _fixed = 8;  // Sabit bir kesirli kısım bit sayısı, yani sabit nokta aritmetiği için kullanılan hassasiyet.
+
+    public:
+        Fixed();  // Varsayılan yapıcı: Nesneyi başlatır.
+        ~Fixed();  // Yıkıcı: Nesne ömrü sona erdiğinde çağrılır, kaynakları serbest bırakır.
+        
+        Fixed(const Fixed &);  // Kopya yapıcı: Mevcut bir nesneden yeni bir nesne oluşturur.
+        
+        Fixed &operator=(const Fixed &);  // Kopya atama operatörü: Mevcut bir nesneyi başka bir nesneyle değiştirir.
+        
+        int getRawBits(void) const;  // Nesnenin ham sabit nokta değerini döndürür.
+        void setRawBits(int const raw);  // Nesnenin sabit nokta değerini ayarlar.
+};
+
+```
+
+Bu sınıf Ortodoks Kanonik Form'daki dört temel fonksiyonu içerir: Varsayılan yapıcı, yıkıcı, kopya yapıcı ve kopya atama operatörü. Yorum satırları bu fonksiyonların ne yaptığını açıklamak için eklenmiştir.
