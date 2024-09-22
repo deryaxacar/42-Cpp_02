@@ -414,8 +414,6 @@ int y = x++; // y'ye mevcut değer (5) atanır, sonra x 6'ya artırılır. Sonu�
 
 <h2 align="center">C++ Ortodoks Kanonik Formu (Orthodox Canonical Form)</h2>
 
----
-
 C++'da **Ortodoks Kanonik Form (Orthodox Canonical Form)**, bir sınıfın temel kural ve fonksiyonlarını tanımlamak için kullanılan bir terimdir. Bu form, bir sınıfın güvenli bir şekilde kopyalanması, taşınması ve yok edilmesi için gerekli olan dört temel fonksiyonu içerir:
 
 1. **Varsayılan Yapıcı (Default Constructor)**
