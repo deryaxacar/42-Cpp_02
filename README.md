@@ -30,8 +30,8 @@
   - [Kullanım Örneği](#kullanım-örneği)
 - [Increment Decrement Prefix ve Postfix Nedir?](#increment-decrement-prefix-ve-postfix-nedir)
   - [Increment (Arttırma) ve Decrement (Azaltma) Operatörleri](#increment-arttırma-ve-decrement-azaltma-operatörleri)
-- [C++ Ortodoks Kanonik Formu (Orthodox Canonical Form)](c++-ortodoks-kanonik-formu-orthodox-canonical-form)
-  - [Ortodoks Kanonik Formu Neden Önemlidir?](ortodoks-kanonik-formu-neden-önemlidir)
+- [C++ Ortodoks Kanonik Formu (Orthodox Canonical Form)](#c++-ortodoks-kanonik-formu-orthodox-canonical-form)
+  - [Ortodoks Kanonik Formu Neden Önemlidir?](#ortodoks-kanonik-formu-neden-önemlidir)
  
 ---
 
