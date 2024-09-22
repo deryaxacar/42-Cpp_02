@@ -1,4 +1,4 @@
-# C++ Ortodoks Kanonik Formu (Orthodox Canonical Form)
+<h2 align="center">C++ Ortodoks Kanonik Formu (Orthodox Canonical Form)</h2>
 
 C++'da **Ortodoks Kanonik Form (Orthodox Canonical Form)**, bir sınıfın temel kural ve fonksiyonlarını tanımlamak için kullanılan bir terimdir. Bu form, bir sınıfın güvenli bir şekilde kopyalanması, taşınması ve yok edilmesi için gerekli olan dört temel fonksiyonu içerir:
 
@@ -11,7 +11,7 @@ Bu dört fonksiyon, bir sınıfın nesneleri arasında güvenli kopyalama, ömü
 
 ---
 
-## 1. Varsayılan Yapıcı (Default Constructor)
+### 1. Varsayılan Yapıcı (Default Constructor)
 
 Varsayılan yapıcı, bir nesne oluşturulduğunda çalıştırılan ve sınıfın üye değişkenlerini başlatan fonksiyondur. Eğer sınıfta herhangi bir yapıcı tanımlanmadıysa, C++ tarafından otomatik olarak oluşturulur. Ancak, bir sınıfın manuel olarak başlatılması gereken kaynakları varsa, bu fonksiyonun kendiniz tarafından tanımlanması gerekebilir.
 
@@ -24,7 +24,9 @@ public:
 };
 ```
 
-## 2. Kopya Yapıcı (Copy Constructor)
+---
+
+### 2. Kopya Yapıcı (Copy Constructor)
 
 Kopya yapıcı, bir nesne başka bir nesnenin kopyası olarak yaratıldığında çağrılır. Genellikle bir nesnenin başka bir nesneye kopyalanmasında kullanılan sınıflarda tanımlanır. Derleyici, eğer tanımlanmadıysa otomatik olarak bir kopya yapıcı oluşturur. Ancak, sınıfın özel kaynakları (dinamik bellek, dosya tanıtıcıları, vb.) yönetiyorsa, bu fonksiyonun özelleştirilmesi gerekebilir.
 
@@ -37,7 +39,9 @@ public:
 };
 ```
 
-## 3. Kopya Atama Operatörü (Copy Assignment Operator)
+---
+
+### 3. Kopya Atama Operatörü (Copy Assignment Operator)
 
 Kopya atama operatörü, bir nesnenin başka bir nesneye kopya yoluyla atanmasını sağlar. Bu operatör genellikle, mevcut bir nesnenin üzerine başka bir nesnenin kopyalanması gerektiğinde kullanılır. Derleyici tarafından otomatik olarak tanımlanabilir, ancak manuel kaynak yönetimi gerektiren sınıflarda özel olarak yazılmalıdır.
 
@@ -54,7 +58,9 @@ public:
 };
 ```
 
-## 4. Yıkıcı (Destructor)
+---
+
+### 4. Yıkıcı (Destructor)
 
 Yıkıcı, bir nesne ömrünü tamamladığında ve bellekten silindiğinde çalıştırılan fonksiyondur. Özellikle dinamik bellek yönetimi gibi manuel kaynak yönetimi yapan sınıflarda, kaynakların serbest bırakılması için önemlidir. Bir yıkıcı tanımlanmadığında, C++ derleyicisi varsayılan bir yıkıcı oluşturur.
 
@@ -67,7 +73,9 @@ public:
 };
 ```
 
-## Ortodoks Kanonik Formu Neden Önemlidir?
+---
+
+<h2 align="center">Ortodoks Kanonik Formu Neden Önemlidir?</h2>
 
 C++'da Ortodoks Kanonik Form, bir sınıfın ömrü boyunca güvenli ve hatasız bir şekilde işleyebilmesi için kritik öneme sahiptir. Bu dört temel fonksiyon, nesne ömrü yönetimini doğru bir şekilde yapabilmeyi sağlar ve özellikle dinamik bellek yönetimi gibi karmaşık işlemleri doğru bir şekilde uygulamaya olanak tanır.
 
@@ -98,3 +106,5 @@ class Fixed
 ```
 
 Bu sınıf Ortodoks Kanonik Form'daki dört temel fonksiyonu içerir: Varsayılan yapıcı, yıkıcı, kopya yapıcı ve kopya atama operatörü. Yorum satırları bu fonksiyonların ne yaptığını açıklamak için eklenmiştir.
+
+---
