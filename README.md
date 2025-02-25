@@ -523,5 +523,5 @@ Bu sınıf Ortodoks Kanonik Form'daki dört temel fonksiyonu içerir: Varsayıla
 
 ---
 
-<p align="center">© 2025 This project was created by Derya ACAR.</p>
+<p align="center">2025 This project was created by Derya ACAR.</p>
 
