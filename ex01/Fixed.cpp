@@ -51,7 +51,7 @@ Fixed &Fixed::operator=(const Fixed &data)
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
     os << fixed.toFloat();
     return os;
@@ -59,16 +59,13 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 
 int Fixed::toInt(void) const
 {
-    
+
     int i_back = holder >> _fixed;
     return (i_back);
 }
 
 float Fixed::toFloat(void) const
 {
-    if((float)_fixed == 0){
-        return 0;
-    }
     float f_back = (float)holder / (float)(1 << _fixed);
     return (f_back);
 }
